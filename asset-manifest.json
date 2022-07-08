@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Art-Institute-of-Chicago/static/css/main.76ff5431.css",
+    "main.js": "/Art-Institute-of-Chicago/static/js/main.bbc9a770.js",
+    "static/js/787.d7e7aaf3.chunk.js": "/Art-Institute-of-Chicago/static/js/787.d7e7aaf3.chunk.js",
+    "index.html": "/Art-Institute-of-Chicago/index.html",
+    "main.76ff5431.css.map": "/Art-Institute-of-Chicago/static/css/main.76ff5431.css.map",
+    "main.bbc9a770.js.map": "/Art-Institute-of-Chicago/static/js/main.bbc9a770.js.map",
+    "787.d7e7aaf3.chunk.js.map": "/Art-Institute-of-Chicago/static/js/787.d7e7aaf3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76ff5431.css",
+    "static/js/main.bbc9a770.js"
+  ]
+}
