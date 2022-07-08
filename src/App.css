@@ -28,6 +28,22 @@
   color: #61dafb;
 }
 
+.card {
+  height: 300px;
+  /* border: 3px red solid; */
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin: 5%;
+  line-height: 15px;
+}
+
+.pageNum {
+  border: 2px black solid;
+  padding: 5px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
