@@ -1,19 +1,21 @@
 import Card from "./Card"
 import Grid from '@mui/material/Grid';
 import React from "react";
+import { logDOM } from "@testing-library/dom";
 
 export default function Cards({results, typeOfUrl}) {
   let display
   let arts = results.data
-  console.log(results)
+  const [cardsLoaded, setCardsLoaded] = React.useState(0)
   
-
-  if (results) {
+  if (arts) {
+    if (arts.length != 0) {
+    console.log(arts, 'arersults')
     function dis() {
       display = arts.map((el) => {
-
+        
         return(
-          <Card key={el.image_id} data={el} typeOfUrl={typeOfUrl}></Card>
+          <Card key={el.image_id} cardsLoaded={setCardsLoaded} data={el} typeOfUrl={typeOfUrl}></Card>
         )
 
       })
@@ -22,9 +24,15 @@ export default function Cards({results, typeOfUrl}) {
   }
   else {
     display = 'no results'
+    console.log(arts, 'no results');
+  }
+}
+  else {
+    display = 'no results'
+    console.log(arts, 'no results');
   }
   return(
-    <div>
+    <div className="cards" onLoad={console.log('yefw')}>
       {display}
     </div>
   )

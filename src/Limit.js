@@ -23,9 +23,6 @@ export default function Limit({clickLimit}) {
           onChange={handleChange}
           label="Arts per page"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
           <MenuItem value={12}>12</MenuItem>
           <MenuItem value={20}>20</MenuItem>
           <MenuItem value={30}>30</MenuItem>

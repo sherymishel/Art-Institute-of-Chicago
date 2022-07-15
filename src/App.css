@@ -37,6 +37,12 @@
   justify-content: end;
   margin: 5%;
   line-height: 15px;
+  border-radius: 1%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .pageNum {
