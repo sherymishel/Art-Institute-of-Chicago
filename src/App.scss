@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+h2 {
+  line-height: 20px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90vh;
+}
+
+.about {
+  margin: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-template-areas:
+  //   "img h1"
+  //   "img artist"
+  //   "img date"
+  //   "img type"
+  //   "img department";
+  &_info {
+    grid-area: info;
+  }
+  &_img {
+    // grid-area: img;
+    // width: 20px;
+  }
+  // &_h1 {
+  //   grid-area: h1;
+  // }
+
+  // &_artist {
+  //   grid-area: artist;
+  // }
+  // &_date {
+  //   grid-area: date;
+  // }
+  // &_type {
+  //   grid-area: type;
+  // }
+  // &_department {
+  //   grid-area: department;
+  // }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+  height: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin: 5%;
+  line-height: 15px;
+  border-radius: 1%;
+  position: relative;
+  background-size: contain !important;
+  background-position: center center !important;
+
+  &_overlay {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &_overlay_animation {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation-name: showpicture;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  &_error {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-items: center;
+  }
+
+  &_image {
+    object-fit: contain;
+    z-index: -2;
+  }
+}
+
+.pageNum {
+  border: 2px black solid;
+  padding: 5px;
+}
+
+.transparent {
+  display: none;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes showpicture {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgba(255, 255, 0, 0);
+  }
+}

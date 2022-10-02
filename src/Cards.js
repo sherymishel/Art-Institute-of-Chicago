@@ -1,39 +1,27 @@
-import Card from "./Card"
-import Grid from '@mui/material/Grid';
+import Card from "./Card";
+import Grid from "@mui/material/Grid";
 import React from "react";
 import { logDOM } from "@testing-library/dom";
 
-export default function Cards({results, typeOfUrl}) {
-  let display
-  let arts = results.data
-  const [cardsLoaded, setCardsLoaded] = React.useState(0)
-  
-  if (arts) {
-    if (arts.length != 0) {
-    console.log(arts, 'arersults')
-    function dis() {
-      display = arts.map((el) => {
-        
-        return(
-          <Card key={el.image_id} cardsLoaded={setCardsLoaded} data={el} typeOfUrl={typeOfUrl}></Card>
-        )
+export default function Cards({ results }) {
+  const [arr, setArr] = React.useState([]);
+  const [cardsLoaded, setCardsLoaded] = React.useState(0);
 
-      })
+  const renderCardsOrMessage = (data) => {
+    if (!data) {
+      return "No results";
     }
-    dis()
-  }
-  else {
-    display = 'no results'
-    console.log(arts, 'no results');
-  }
-}
-  else {
-    display = 'no results'
-    console.log(arts, 'no results');
-  }
-  return(
-    <div className="cards" onLoad={console.log('yefw')}>
-      {display}
-    </div>
-  )
+    return data.map((el) => {
+      return (
+        <Card
+          setArr={setArr}
+          arr={arr}
+          setCardsLoaded={setCardsLoaded}
+          key={el.image_id !== null ? el.image_id : el.id}
+          data={el}
+        />
+      );
+    });
+  };
+  return <div className="cards">{renderCardsOrMessage(results.data)}</div>;
 }

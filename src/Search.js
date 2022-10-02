@@ -1,21 +1,28 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
-export default function Search({setSearch}) {
+export default function Search({ setSearch }) {
+  const onChange = (e) => {
+    console.log("s");
+    setSearch(e.target.value);
+  };
 
-  const onChange = e => setSearch(e.target.value)
-  
   return (
     <Box
       component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+        "& > :not(style)": { m: 1, width: "25ch" },
       }}
       noValidate
       autoComplete="off"
     >
-      <TextField onChange={onChange} id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField
+        onChange={onChange}
+        id="outlined-basic"
+        label="Outlined"
+        variant="outlined"
+      />
     </Box>
   );
 }
